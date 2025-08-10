@@ -1,0 +1,245 @@
+/* فونت و تنظیمات پایه */
+@import url('https://fonts.googleapis.com/css2?family=Vazir&display=swap');
+
+body {
+  font-family: 'Vazir', Tahoma, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* نوار بالای صفحه */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: rgba(255 255 255 / 0.15);
+  backdrop-filter: blur(10px);
+  padding: 15px 30px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  gap: 25px;
+  direction: rtl;
+}
+.navbar img.img1 {
+  height: 45px;
+  margin-left: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.navbar img.img1:hover {
+  transform: scale(1.05);
+}
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+.navbar a:hover {
+  background-color: rgba(255 255 255 / 0.25);
+  color: #f0f0f0;
+}
+
+/* بخش اصلی محتوا */
+div > h1.h1s {
+  text-align: center;
+  color: white;
+  font-size: 32px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  letter-spacing: 1.3px;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+}
+div > h1.h11 {
+  text-align: center;
+  color: transparent;
+  margin: 0;
+  height: 20px; /* فضای خالی برای فاصله */
+}
+
+/* دکمه‌ها */
+.btn1 {
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Vazir', Tahoma, sans-serif;
+  margin: 12px 10px;
+  padding: 15px 30px;
+  min-width: 180px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #6c63ff, #4a47a3);
+  color: white;
+  box-shadow: 0 5px 15px rgba(108, 99, 255, 0.5);
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+  user-select: none;
+}
+.btn1:hover {
+  background: linear-gradient(135deg, #4a47a3, #6c63ff);
+  box-shadow: 0 8px 25px rgba(108, 99, 255, 0.8);
+  transform: translateY(-3px);
+}
+.btn1:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(108, 99, 255, 0.4);
+}
+
+/* فوتر */
+footer {
+  margin-top: auto;
+  background: rgba(255 255 255 / 0.15);
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-weight: 500;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+  user-select: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+/* استایل اپراتور */
+.op {
+  font-size: 20px;
+  color: #1e2a78;
+  background-color: #f0f6ff;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(68, 126, 228, 0.2);
+  text-align: center;
+  margin: 30px auto 25px;
+  max-width: 400px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+}
+
+/* بخش وضعیت سرورها */
+.server-status {
+  max-width: 400px;
+  margin: 0 auto 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* کارت وضعیت هر سرور */
+.on-off {
+  display: flex;
+  align-items: center;
+  background-color: #f9fbff;
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 0 2px 12px rgba(68, 126, 228, 0.15);
+  position: relative;
+  user-select: none;
+  cursor: default;
+}
+
+/* چراغ سبز چشمک زن */
+.green-light {
+  width: 22px;
+  height: 22px;
+  background-color: #02d802;
+  border-radius: 50%;
+  box-shadow: 0 0 8px 2px #02d802;
+  animation: blink 1.2s infinite alternate;
+  flex-shrink: 0;
+  margin-right: 15px;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+    box-shadow: 0 0 8px 2px #02d802;
+  }
+  50% {
+    opacity: 0.3;
+    box-shadow: none;
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 8px 2px #02d802;
+  }
+}
+
+/* متن وضعیت و نام سرور */
+.status-text {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  font-family: 'Vazir', Tahoma, sans-serif;
+  color: #1e2a78;
+  flex-grow: 1;
+}
+
+.status-text h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.status-text .online {
+  font-family: 'Ink Free', cursive;
+  font-size: 16px;
+  color: #02d802;
+  margin-top: 4px;
+  font-weight: 600;
+  text-shadow: 0 0 4px rgba(2, 216, 2, 0.7);
+}
+
+/* ریسپانسیو ساده */
+@media (max-width: 450px) {
+  .server-status {
+    max-width: 90%;
+  }
+
+  .op {
+    max-width: 90%;
+    font-size: 18px;
+  }
+}
+
+    #loadingOverlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    #loadingOverlay > div {
+      border: 8px solid #f3f3f3;
+      border-top: 8px solid #3498db;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
+    }
+
+    .player-count {
+  font-size: 14px;
+  color: #2e7d32; /* سبز تیره */
+  margin-top: 4px;
+  font-weight: 600;
+  user-select: none;
+}
