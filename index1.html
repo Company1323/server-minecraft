@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="m4.png" type="image/png" />
+  <title>صفحه اصلی | سایت سرور ماینکرافت</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="navbar">
+    <img class="img1" src="m2.png" alt="لوگو سایت" />
+    <a href="#" onclick="goWithLoading('index2(s).html'); return false;">سرور صدرا</a>
+    <a href="#" onclick="goWithLoading('index3(m).html'); return false;">سرور مهدی</a>
+    <a href="#" onclick="goWithLoading('index1.html'); return false;">خانه</a>
+    <a href="#" onclick="goWithLoading('login.html'); return false;">ثبت‌نام و ورود</a>
+  </div>
+
+  <div>
+    <h1 class="h1s">سرور های ماینکرافت :</h1>
+    <h1 class="h11">.</h1>
+    <div style="text-align: center;">
+      <button class="btn1" onclick="goWithLoading('index2(s).html')">سرور صدرا</button>
+      <button class="btn1" onclick="goWithLoading('index3(m).html')">سرور مهدی</button>
+      <button class="btn1" onclick="alert('به زودی....')">...</button>
+      <button class="btn1" onclick="alert('به زودی....')">...</button>
+    </div>
+  </div>
+
+  <div class="op">
+    (سروایوال | survival)اپراتور سرورها: starman139
+  </div>
+
+  <div class="server-status">
+  <div class="on-off">
+    <div class="green-light"></div>
+    <div class="status-text">
+      <h3>سرور مهدی</h3>
+      <div class="online">Online</div>
+      <div class="player-count">تعداد نفرات: 5</div>
+    </div>
+  </div>
+
+  <div class="on-off">
+    <div class="green-light"></div>
+    <div class="status-text">
+      <h3>سرور صدرا</h3>
+      <div class="online">Online</div>
+      <div class="player-count">تعداد نفرات: 8</div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- لودینگ -->
+  <div id="loadingOverlay">
+    <div></div>
+  </div>
+
+  <footer>
+    © همه حقوق محفوظ است 2025
+  </footer>
+
+<script>
+  function goWithLoading(url) {
+    const loading = document.getElementById('loadingOverlay');
+    loading.style.display = 'flex';
+    setTimeout(() => {
+      window.location.href = url;
+    }, 2000);
+  }
+</script>
+
+</body>
+</html>
