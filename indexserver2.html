@@ -3,143 +3,96 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="m4.png" type="image/png" />
-  <title>اطلاعات سرور| مهدی</title>
+  <link rel="icon" href="m4.png" type="image/png" />
+  <title>اطلاعات سرور | مهدی</title>
   <style>
     /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Vazir", Tahoma, sans-serif;
-    }
-    body {
-      background: #f0f2f5;
-      min-height: 100vh;
+    * {margin:0; padding:0; box-sizing:border-box; font-family: 'Vazir', Tahoma, sans-serif;}
+    body {background: #f0f2f5; min-height:100vh; display:flex; flex-direction:column;}
+
+    /* Navbar */
+    nav {
+      background-color: #4a90e2;
+      padding: 15px 30px;
+      color: white;
+      font-weight: 600;
+      font-size: 20px;
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+      flex-wrap: wrap;
     }
-
-nav {
-  background-color: #4a90e2;
-  padding: 15px 30px;
-  color: white;
-  font-weight: 600;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  /* اضافه شده برای برعکس کردن ترتیب */
-  flex-direction: row-reverse;
-}
-nav .logo {
-  font-weight: 700;
-  letter-spacing: 2px;
-
-  /* حذف margin-left چون الان در سمت راست است */
-  margin-left: 0;
-}
-nav .menu a {
-  color: white;
-  margin-right: 20px; /* جایگزین margin-left */
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-nav .menu a:hover {
-  color: #cde4ff;
-}
-
+    nav .logo { font-weight:700; letter-spacing:2px; }
+    nav .menu a {
+      color:white;
+      margin-right:20px;
+      text-decoration:none;
+      font-weight:500;
+      transition: color 0.3s ease;
+    }
+    nav .menu a:hover { color:#cde4ff; }
 
     /* Main content */
     main {
-      flex-grow: 1;
-      padding: 40px 30px;
-      max-width: 700px;
-      margin: 30px auto;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      flex-grow:1;
+      padding:40px 30px;
+      max-width:700px;
+      margin:30px auto;
+      background:white;
+      border-radius:12px;
+      box-shadow:0 6px 15px rgba(0,0,0,0.1);
     }
-
-    h1 {
-      margin-bottom: 25px;
-      color: #333;
-      text-align: center;
-    }
+    h1 { margin-bottom:25px; color:#333; text-align:center; }
 
     .info {
-      font-size: 18px;
-      margin-bottom: 15px;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      padding: 15px 20px;
-      border-radius: 8px;
-      background: #e9f0fb;
-      color: #1e2a78;
-      box-shadow: inset 0 0 10px rgba(29, 53, 94, 0.1);
+      font-size:18px;
+      margin-bottom:15px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 20px;
+      border-radius:8px;
+      background:#e9f0fb;
+      color:#1e2a78;
+      box-shadow: inset 0 0 10px rgba(29,53,94,0.1);
+      direction: rtl;
+      flex-wrap:wrap;
     }
-    .info > div:first-child {
-      margin-left: 10px;
-      font-weight: 600;
-    }
-    .info > div#server-ip {
-      margin-left: 10px;
-      font-weight: 500;
-    }
+    .info > div:first-child { font-weight:600; margin-left:10px; }
+    .info > div.value { font-weight:500; margin-left:10px; }
 
-        .info {
-      font-size: 18px;
-      margin-bottom: 15px;
-      display: flex;
-      justify-content: space-between; /* فاصله بین عنوان و مقدار */
-      align-items: center;
-      padding: 15px 20px;
-      border-radius: 8px;
-      background: #e9f0fb;
-      color: #1e2a78;
-      box-shadow: inset 0 0 10px rgba(29, 53, 94, 0.1);
-      direction: ltr; /* جهت متن فارسی */
-    }
-
-    /* دکمه کپی */
+    /* Copy button */
     .copy-btn {
-      background-color: #4a90e2;
-      border: none;
-      color: white;
-      padding: 5px 10px;
-      font-size: 14px;
-      border-radius: 6px;
-      cursor: pointer;
+      background-color:#4a90e2;
+      border:none;
+      color:white;
+      padding:5px 10px;
+      font-size:14px;
+      border-radius:6px;
+      cursor:pointer;
       transition: background-color 0.3s ease;
-      margin-left: 10px;
-      user-select: none;
+      margin-left:10px;
+      user-select:none;
     }
-    .copy-btn:hover {
-      background-color: #357ABD;
-    }
-
-    /* پیام کپی شده */
-    #copy-msg {
-      font-size: 14px;
-      color: green;
-      margin-left: 15px;
-      display: none;
-    }
+    .copy-btn:hover { background-color:#357ABD; }
+    #copy-msg { font-size:14px; color:green; margin-left:15px; display:none; }
 
     /* Footer */
-    footer {
-      padding: 15px;
-      text-align: center;
-      font-size: 14px;
-      color: #666;
-      background: #f7f9fc;
-      margin-top: auto;
-      box-shadow: inset 0 1px 0 #ddd;
-    }
+    footer { padding:15px; text-align:center; font-size:14px; color:#666; background:#f7f9fc; margin-top:auto; box-shadow: inset 0 1px 0 #ddd; }
 
+    /* Responsive */
+    @media (max-width:768px){
+      main { width:95%; padding:30px 20px; }
+      .info { font-size:16px; padding:12px; flex-direction:column; align-items:flex-start; }
+      .copy-btn { margin-top:10px; }
+      nav { flex-direction: column; align-items:flex-start; padding:10px 20px; }
+      nav .menu a { margin:5px 0; font-size:16px; }
+    }
+    @media (max-width:450px){
+      h1 { font-size:22px; }
+      .info { font-size:14px; padding:10px; }
+    }
   </style>
 </head>
 <body>
@@ -156,19 +109,19 @@ nav .menu a:hover {
 
     <div class="info">
       <div>آی‌پی سرور:</div>
-      <div id="server-ip">در حال بارگذاری...</div>
+      <div id="server-ip" class="value">در حال بارگذاری...</div>
       <button class="copy-btn" onclick="copyIP()">کپی</button>
       <div id="copy-msg">کپی شد!</div>
     </div>
 
     <div class="info">
       <div>نسخه سرور:</div>
-      <div id="server-version"> 1.21.4 Forge</div>
+      <div id="server-version" class="value">1.21.4 Forge</div>
     </div>
 
     <div class="info">
       <div>بازیکنان:</div>
-      <div id="server-version">starman139 - mohammad439537</div>
+      <div id="server-players" class="value">starman139 - mohammad439537</div>
     </div>
   </main>
 
@@ -180,17 +133,16 @@ nav .menu a:hover {
     const serverIP = "emerald.magmanode.com:33196";  
     document.getElementById("server-ip").textContent = serverIP;
 
+    const serverPlayers = "starman139 - mohammad439537";
+    document.getElementById("server-players").textContent = serverPlayers;
+
     function copyIP() {
       const ipText = document.getElementById("server-ip").textContent;
       navigator.clipboard.writeText(ipText).then(() => {
         const msg = document.getElementById("copy-msg");
         msg.style.display = "inline";
-        setTimeout(() => {
-          msg.style.display = "none";
-        }, 1500);
-      }).catch(() => {
-        alert("امکان کپی کردن وجود ندارد.");
-      });
+        setTimeout(()=>{msg.style.display="none"},1500);
+      }).catch(()=>{alert("امکان کپی کردن وجود ندارد.")});
     }
   </script>
 

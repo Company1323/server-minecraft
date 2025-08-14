@@ -1,4 +1,6 @@
+/* ============================= */
 /* فونت و تنظیمات پایه */
+/* ============================= */
 @import url('https://fonts.googleapis.com/css2?family=Vazir&display=swap');
 
 body {
@@ -10,7 +12,9 @@ body {
   flex-direction: column;
 }
 
-/* نوار بالای صفحه */
+/* ============================= */
+/* نوار بالای صفحه (Navbar) */
+/* ============================= */
 .navbar {
   display: flex;
   align-items: center;
@@ -24,6 +28,7 @@ body {
   z-index: 100;
   gap: 25px;
   direction: rtl;
+  flex-wrap: wrap;
 }
 .navbar img.img1 {
   height: 45px;
@@ -50,7 +55,9 @@ body {
   color: #f0f0f0;
 }
 
+/* ============================= */
 /* بخش اصلی محتوا */
+/* ============================= */
 div > h1.h1s {
   text-align: center;
   color: white;
@@ -64,10 +71,12 @@ div > h1.h11 {
   text-align: center;
   color: transparent;
   margin: 0;
-  height: 20px; /* فضای خالی برای فاصله */
+  height: 20px;
 }
 
+/* ============================= */
 /* دکمه‌ها */
+/* ============================= */
 .btn1 {
   font-size: 18px;
   font-weight: 600;
@@ -96,7 +105,9 @@ div > h1.h11 {
   box-shadow: 0 3px 10px rgba(108, 99, 255, 0.4);
 }
 
+/* ============================= */
 /* فوتر */
+/* ============================= */
 footer {
   margin-top: auto;
   background: rgba(255 255 255 / 0.15);
@@ -111,7 +122,9 @@ footer {
   letter-spacing: 1px;
 }
 
+/* ============================= */
 /* استایل اپراتور */
+/* ============================= */
 .op {
   font-size: 20px;
   color: #1e2a78;
@@ -126,7 +139,9 @@ footer {
   letter-spacing: 0.8px;
 }
 
+/* ============================= */
 /* بخش وضعیت سرورها */
+/* ============================= */
 .server-status {
   max-width: 400px;
   margin: 0 auto 40px;
@@ -146,6 +161,7 @@ footer {
   position: relative;
   user-select: none;
   cursor: default;
+  flex-wrap: wrap;
 }
 
 /* چراغ سبز چشمک زن */
@@ -201,45 +217,116 @@ footer {
   text-shadow: 0 0 4px rgba(2, 216, 2, 0.7);
 }
 
-/* ریسپانسیو ساده */
-@media (max-width: 450px) {
-  .server-status {
-    max-width: 90%;
-  }
-
-  .op {
-    max-width: 90%;
-    font-size: 18px;
+/* ============================= */
+/* ریسپانسیو کامل */
+/* ============================= */
+@media (max-width: 1024px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
   }
 }
 
-    #loadingOverlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5);
-      z-index: 9999;
-      justify-content: center;
-      align-items: center;
-    }
-    #loadingOverlay > div {
-      border: 8px solid #f3f3f3;
-      border-top: 8px solid #3498db;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      animation: spin 1s linear infinite;
-    }
-    @keyframes spin {
-      0% { transform: rotate(0deg);}
-      100% { transform: rotate(360deg);}
-    }
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
 
-    .player-count {
+  .navbar img.img1 {
+    height: 40px;
+    margin-left: 0;
+  }
+
+  .navbar a {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .server-status {
+    max-width: 95%;
+    gap: 10px;
+  }
+
+  .on-off {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 15px;
+  }
+
+  .status-text h3 {
+    font-size: 18px;
+  }
+
+  .status-text .online {
+    font-size: 14px;
+  }
+
+  .op {
+    font-size: 16px;
+    padding: 12px 20px;
+    max-width: 95%;
+  }
+
+  .btn1 {
+    font-size: 16px;
+    padding: 12px 20px;
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 450px) {
+  div > h1.h1s {
+    font-size: 26px;
+    margin-top: 30px;
+  }
+
+  div > h1.h11 {
+    height: 15px;
+  }
+}
+
+/* ============================= */
+/* لودینگ Overlay */
+/* ============================= */
+#loadingOverlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+#loadingOverlay > div {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+
+/* ============================= */
+/* تعداد پلیرها */
+/* ============================= */
+.player-count {
   font-size: 14px;
-  color: #2e7d32; /* سبز تیره */
+  color: #2e7d32;
   margin-top: 4px;
   font-weight: 600;
   user-select: none;
+}
+
+/* تصاویر و محتوای فلکس */
+img, video {
+  max-width: 100%;
+  height: auto;
 }
