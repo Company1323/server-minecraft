@@ -1,0 +1,198 @@
+/* ============================= */
+/* فونت و تنظیمات پایه */
+/* ============================= */
+@import url('https://fonts.googleapis.com/css2?family=Vazir&display=swap');
+
+body {
+  font-family: 'Vazir', Tahoma, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================= */
+/* نوار بالای صفحه (Navbar) */
+/* ============================= */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: rgba(255 255 255 / 0.15);
+  backdrop-filter: blur(10px);
+  padding: 15px 30px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  gap: 25px;
+  direction: rtl;
+  flex-wrap: wrap;
+}
+.navbar img.img1 {
+  height: 45px;
+  margin-left: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.navbar img.img1:hover {
+  transform: scale(1.05);
+}
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+.navbar a:hover {
+  background-color: rgba(255 255 255 / 0.25);
+  color: #f0f0f0;
+}
+
+/* ============================= */
+/* بخش اصلی محتوا */
+/* ============================= */
+.h1s {   /* 🔥 اصلاح شد */
+  text-align: center;
+  color: white;
+  font-size: 32px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  letter-spacing: 1.3px;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+}
+
+/* ============================= */
+/* فوتر */
+/* ============================= */
+footer {
+  margin-top: auto; /* 🔥 همیشه بچسبه پایین */
+  background: rgba(255 255 255 / 0.15);
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-weight: 500;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+  user-select: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+/* ============================= */
+/* بخش وضعیت سرورها */
+/* ============================= */
+.server-status {
+  max-width: 500px;
+  margin: 0 auto 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* کارت وضعیت هر سرور */
+.on-off {
+  display: flex;
+  align-items: center;
+  background-color: #f9fbff;
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 0 2px 12px rgba(16, 68, 158, 0.15);
+  position: relative;
+  user-select: none;
+  cursor: default;
+  flex-wrap: wrap;
+  width: 400px;
+  height: 80px;
+}
+
+/* چراغ سبز چشمک زن */
+.green-light {
+  width: 22px;
+  height: 22px;
+  background-color: #02d802;
+  border-radius: 50%;
+  box-shadow: 0 0 8px 2px #02d802;
+  animation: blink 1.2s infinite alternate;
+  flex-shrink: 0;
+  margin-right: 15px;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+    box-shadow: 0 0 8px 2px #02d802;
+  }
+  50% {
+    opacity: 0.3;
+    box-shadow: none;
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 8px 2px #02d802;
+  }
+}
+
+/* متن وضعیت و نام سرور */
+.status-text {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  font-family: 'Vazir', Tahoma, sans-serif;
+  color: #1e2a78;
+  flex-grow: 1;
+}
+
+.status-text h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.status-text .online {
+  font-family: 'Ink Free', cursive;
+  font-size: 16px;
+  color: rgb(0, 59, 0);
+  margin-top: 4px;
+  font-weight: 600;
+  text-shadow: 0 0 4px rgba(0, 59, 0, 0.7);
+}
+
+/* ============================= */
+/* ریسپانسیو کامل */
+/* ============================= */
+@media (max-width: 1024px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+}
+
+/* افکت هاور روی باکس اطلاعیه‌ها */
+/* هم برای هاور (موس) هم برای فوکوس/لمس (گوشی) */
+.on-off {
+  transition: all 0.8s ease;
+}
+
+.on-off:hover,
+.on-off:active,
+.on-off:focus {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(16, 68, 158, 0.25);
+}

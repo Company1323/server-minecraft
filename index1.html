@@ -1,92 +1,127 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="m4.png" type="image/png" />
-  <title>صفحه اصلی | سایت سرور ماینکرافت</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سرورهای ماینکرافت | صفحه اصلی</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <nav class="navbar">
-    <img class="img1" src="m2.png" alt="لوگو سایت" />
+  <!-- صفحه لودینگ -->
+<!-- صفحه لودینگ -->
+<div id="loader">
+  <div class="spinner"></div>
+  <h2>در حال بارگذاری...</h2>
+</div>
 
-    <!-- منوی همبرگری -->
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+<!-- محتوای اصلی -->
+<div class="main-content">
+  <form class="login-form">
+    <!-- فرم لاگین تو اینجا باشه -->
+  </form>
+</div>
 
-    <div class="nav-links" id="nav-links">
-      <a href="#" onclick="goWithLoading('index1.html'); return false;">خانه</a>
-      <a href="#" onclick="goWithLoading('index2(s).html'); return false;">سرور صدرا</a>
-      <a href="#" onclick="goWithLoading('index3(m).html'); return false;">سرور مهدی</a>
-    </div>
-  </nav>
-
-  <div>
-    <h1 class="h1s">سرور های ماینکرافت :</h1>
-    <h1 class="h11">.</h1>
-    <div style="text-align: center;">
-      <button class="btn1" onclick="goWithLoading('index2(s).html')">سرور صدرا</button>
-      <button class="btn1" onclick="goWithLoading('index3(m).html')">سرور مهدی</button>
-      <button class="btn1" onclick="alert('به زودی....')">...</button>
-      <button class="btn1" onclick="alert('به زودی....')">...</button>
-    </div>
-  </div>
-
-  <div class="op">
-    (سروایوال | survival)اپراتور سرورها: starman139
-  </div>
-
-  <div class="server-status">
-    <div class="on-off">
-      <div class="green-light"></div>
-      <div class="status-text">
-        <h3>سرور مهدی</h3>
-        <div class="online">Online</div>
-        <div class="player-count">تعداد نفرات: 5</div>
+  <header class="header">
+    <nav class="navbar">
+      <div class="logo">
+        <img src="m2.png" alt="لوگو سرور ماینکرافت">
       </div>
-    </div>
-
-    <div class="on-off">
-      <div class="green-light"></div>
-      <div class="status-text">
-        <h3>سرور صدرا</h3>
-        <div class="online">Online</div>
-        <div class="player-count">تعداد نفرات: 8</div>
+      <div class="nav-links" id="navLinks">
+        <a href="index1.html">خانه</a>
+        <a href="index2(s).html">سرور صدرا</a>
+        <a href="index3(m).html">سرور مهدی</a>
+        <a href="informations.html">اطلاعات بیشتر</a>
       </div>
-    </div>
-  </div>
+      <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+  </header>
 
-  <!-- لودینگ -->
-  <div id="loadingOverlay">
-    <div></div>
-  </div>
+  <main>
+    <!-- بخش Hero مشابه CyberDev -->
+    <section class="cyber-section">
+      <div class="cyber-container">
+        <div class="cyber-image">
+          <img src="m1.png" alt="تصویر سرور ماینکرافت">
+        </div>
+        <div class="cyber-content">
+          <h1>سرورهای ماینکرافت</h1>
+          <h2>تجربه بازی آنلاین حرفه‌ای</h2>
+          <p>زندگی کردن در دنیا ماینکرافت و برای زنده ماندن<br>
+          بدون مردن ، بدون باختن باید تلاش کرد.</p>
+          
+          <div class="expertise">
+            <h3>ویژگی‌های سرورها</h3>
+            <div class="expertise-item">
+              <strong>سرور صدرا</strong>
+              <span>سرور سروایوال</span>
+            </div>
+            <div class="expertise-item">
+              <strong>سرور مهدی</strong>
+              <span>سرور سروایوال</span>
+            </div>
+            <div class="expertise-item">
+              <strong>سرور جدید</strong>
+              <span>به زودی راه‌اندازی می‌شود</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <footer>
-    © همه حقوق محفوظ است 2025
+    <!-- بخش دکمه‌های سرور -->
+    <section class="server-buttons-section">
+      <div class="container">
+        <h2 class="section-title">سرور های ماینکرافت</h2>
+        <div class="button-group">
+          <a href="index2(s).html" class="cyber-btn">سرور صدرا</a>
+          <a href="index3(m).html" class="cyber-btn">سرور مهدی</a>
+          <a href="#" class="cyber-btn coming-soon" onclick="alert('به زودی...');" >سرور جدید</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- بخش وضعیت سرورها -->
+    <section class="server-status-section">
+      <div class="container">
+        <div class="status-card">
+          <div class="status-light online"></div>
+          <div class="status-info">
+            <h3>سرور مهدی</h3>
+            <p class="status">آنلاین</p>
+            <p class="players">5 بازیکن</p>
+          </div>
+        </div>
+
+        <div class="status-card">
+          <div class="status-light online"></div>
+          <div class="status-info">
+            <h3>سرور صدرا</h3>
+            <p class="status">آنلاین</p>
+            <p class="players">8 بازیکن</p>
+          </div>
+        </div>
+      </div>
+
+                    <div class="status-card1">
+          <div class="status-light online1"></div>
+          <div class="status-info1">
+            <h3>سرور جدید</h3>
+            <p class="status1">آفلاین</p>
+            <p class="players1">0/0 بازیکن</p>
+          </div>
+    </section>
+
+  </main>
+
+  <footer class="cyber-footer">
+    <p>اپراتور سرورها: starman139 | نوع سرور: سروایوال (Survival)</p>
+    <p>© کلیه حقوق برای سرورهای ماینکرافت محفوظ است - 2025</p>
   </footer>
 
-<script>
-  function goWithLoading(url) {
-    const loading = document.getElementById('loadingOverlay');
-    loading.style.display = 'flex';
-    setTimeout(() => {
-      window.location.href = url;
-    }, 2000);
-  }
-
-  // همبرگر
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('nav-links');
-
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
