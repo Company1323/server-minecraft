@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>اطلاعات سرور | صدرا</title>
-<link rel="icon" href="m4.png" type="image/png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="m4.png" type="image/png" />
+  <title>اطلاعات سرور | مهدی</title>
 <style>
 :root {
   --primary-color: #00ffd6;
@@ -95,6 +95,7 @@ footer { padding:15px; text-align:center; font-size:14px; color:#aaa; background
   h1 { font-size:22px; }
   .info { font-size:14px; padding:10px; }
 }
+
 /* CSS */
 #loader {
   position: fixed;
@@ -144,69 +145,60 @@ footer { padding:15px; text-align:center; font-size:14px; color:#aaa; background
 </div>
 
 
-
-<nav>
-  <div class="logo">ServerPanel</div>
-  <div class="menu">
+  <nav>
+    <div class="logo">ServerPanel</div>
+    <div class="menu">
       <a href="index1.html">خانه</a>
         <a href="index2(s).html">سرور صدرا</a>
         <a href="index3(m).html">سرور مهدی</a>
         <a href="index4(3nafar).html">سرور سه نفره</a>
-        <a href="informations.html">اطلاعات بیشتر</a>
-  </div>
-</nav>
+        <a href="informations.html">اطلاعیه‌ها</a>
+    </div>
+  </nav>
 
-<main>
-  <h1>اطلاعات سرور شما</h1>
+  <main>
+    <h1>اطلاعات سرور شما</h1>
 
-  <div class="info">
-    <div>آی‌پی سرور:</div>
-    <div id="server-ip" class="value">در حال بارگذاری...</div>
-    <button class="copy-btn" onclick="copyIP()">کپی</button>
-    <div id="copy-msg">کپی شد!</div>
-  </div>
+    <div class="info">
+      <div>آی‌پی سرور:</div>
+      <div id="server-ip" class="value">emerald.magmanode.com:26707</div>
+      <button class="copy-btn" onclick="copyIP()">کپی</button>
+      <div id="copy-msg">کپی شد!</div>
+    </div>
 
-  <div class="info">
-    <div>نسخه سرور:</div>
-    <div id="server-version" class="value">1.21.7 Fabric</div>
-  </div>
+    <div class="info">
+      <div>نسخه سرور:</div>
+      <div id="server-version" class="value">1.21.7 Relase(Paper)</div>
+    </div>
 
-  <div class="info">
-    <div>بازیکنان:</div>
-    <div id="server-players" class="value">starman139 - Beykslami</div>
-  </div>
-</main>
+    <div class="info">
+      <div>بازیکنان:</div>
+      <div id="server-players" class="value">starman139 - mohammad439537 - Beykslami</div>
+    </div>
+  </main>
 
-<footer>
-  © 2025 همه حقوق محفوظ است.
-</footer>
+  <footer>
+    © 2025 همه حقوق محفوظ است.
+  </footer>
 
-<script>
+  <script>
+    function copyIP() {
+      const ipText = document.getElementById("server-ip").textContent;
+      navigator.clipboard.writeText(ipText).then(()=>{
+        const msg = document.getElementById("copy-msg");
+        msg.style.display="inline";
+        setTimeout(()=>{msg.style.display="none"},1500);
+      }).catch(()=>{alert("امکان کپی کردن وجود ندارد.")});
+    }
 
-    // لودر
+      // لودر
   window.addEventListener("load", () => {
     const loader = document.getElementById("loader");
     setTimeout(() => {
       loader.classList.add("hidden");
     }, 400); 
   });
-
-const serverIP = "emerald.magmanode.com:31493";  
-document.getElementById("server-ip").textContent = serverIP;
-
-const serverPlayers = "starman139 - Beykslami";
-document.getElementById("server-players").textContent = serverPlayers;
-
-function copyIP(){
-  const ipText = document.getElementById("server-ip").textContent;
-  navigator.clipboard.writeText(ipText).then(()=>{
-    const msg = document.getElementById("copy-msg");
-    msg.style.display = "inline";
-    setTimeout(()=>{msg.style.display="none"},1500);
-  }).catch(()=>{alert("امکان کپی کردن وجود ندارد.")});
-}
-
-</script>
+  </script>
 
 </body>
 </html>

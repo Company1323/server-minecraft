@@ -204,22 +204,33 @@ body {
   cursor:pointer;
 }
 
-/* وضعیت سرورها */
+/* وضعیت سرورها 
 .server-status-section {
   padding: 2rem;
   max-width: 800px;
   margin: 0 auto;
+  width: 288px;
+  
+}*/
+
+.server-status-section{
+  display: flex;
+  flex-direction: column;   /* باکس‌ها زیر هم */
+  align-items: flex-start;
+  gap: 15px;                /* فاصله بین باکس‌ها */
+  margin-right: 50px;       /* فاصله از لبه راست */
 }
 
 .status-card {
   display: flex;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 1.5rem;
-  border-radius: 21px;
-  margin-bottom: 1.5rem;
-  transition: transform 0.3s;
+  background: #0d1b2a;
+  padding: 15px 20px;
+  border-radius: 12px;
+  width: 250px;             /* عرض مشخص */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
+
 
 .status-card:hover {
   transform: translateY(-5px);
@@ -320,20 +331,26 @@ body {
 
 /* وضعیت سرورها */
 .server-status-section1 {
-  padding: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* سه ستون */
+  gap: 20px; /* فاصله بین باکس‌ها */
+  justify-items: center; /* وسط چین در ستون */
+  margin: 0 auto 40px auto; /* مرکز صفحه و فاصله پایین */
+  max-width: 900px; /* می‌توانید بر اساس نیاز تغییر دهید */
 }
+
 
 .status-card1 {
   display: flex;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 1.5rem;
-  border-radius: 21px;
-  margin-bottom: 1.5rem;
-  transition: transform 0.3s;
+  background: #0d1b2a;
+  padding: 15px 20px;
+  border-radius: 12px;
+  width: 250px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  color: #fff;
 }
+
 
 .status-card1:hover {
   transform: translateY(-5px);
@@ -405,4 +422,254 @@ body {
 #loader.hidden {
   opacity: 0;
   visibility: hidden;
+}
+
+
+.server-status-wrapper {
+  display: flex;
+  gap: 30px; /* فاصله بین دو بخش */
+  justify-content: center; /* وسط چین کل بخش */
+  flex-wrap: wrap; /* برای موبایل ردیف‌ها بشکنه */
+}
+
+.server-status-section2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.server-status-section2{
+  display: flex;
+   /* باکس‌ها زیر هم */
+  align-items: flex-start;
+  gap: 15px;
+  margin-right: 315px;
+  margin-top: -122px;
+}
+
+.status-card2 {
+  display: flex;
+  align-items: center;
+  background: #0d1b2a;
+  padding: 15px 20px;
+  border-radius: 12px;
+  width: 250px;             /* عرض مشخص */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+
+.status-card2:hover {
+  transform: translateY(-5px);
+}
+
+.status-light2 {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-left: 1.5rem;
+}
+
+.online2 {
+  background-color: #ff0000;
+  box-shadow: 0 0 10px #ff0000;
+}
+
+.status-info2 h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.status2 {
+  font-size: 0.9rem;
+  color: #f15050;
+  margin-bottom: 0.3rem;
+}
+
+.players2 {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/*-----------------------------------*/
+
+.server-status-section3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.server-status-section3{
+  display: flex;
+   /* باکس‌ها زیر هم */
+  align-items: flex-start;
+  gap: 15px;
+  margin-right: 315px;
+  margin-top: -259px;
+}
+
+.status-card3 {
+  display: flex;
+  align-items: center;
+  background: #0d1b2a;
+  padding: 15px 20px;
+  border-radius: 12px;
+  width: 250px;             /* عرض مشخص */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+
+.status-card3:hover {
+  transform: translateY(-5px);
+}
+
+.status-light3 {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-left: 1.5rem;
+}
+
+.online3 {
+  background-color: #ff0000;
+  box-shadow: 0 0 10px #ff0000;
+}
+
+.status-info3 h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.status3 {
+  font-size: 0.9rem;
+  color: #ff5757;
+  margin-bottom: 0.3rem;
+}
+
+.players3 {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/*--------------------------------------*/
+
+.server-status-section4 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.server-status-section4{
+  display: flex;
+   /* باکس‌ها زیر هم */
+  align-items: flex-start;
+  gap: 15px;
+  margin-right: 315px;
+  margin-top: -260px;
+}
+
+.status-card4 {
+  display: flex;
+  align-items: center;
+  background: #0d1b2a;
+  padding: 15px 20px;
+  border-radius: 12px;
+  width: 250px;             /* عرض مشخص */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+
+.status-card4:hover {
+  transform: translateY(-5px);
+}
+
+.status-light4 {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-left: 1.5rem;
+}
+
+.online4 {
+  background-color: #ff0000;
+  box-shadow: 0 0 10px #ff0000;
+}
+
+.status-info4 h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.status4 {
+  font-size: 0.9rem;
+  color: #ff5757;
+  margin-bottom: 0.3rem;
+}
+
+.players4{
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/*---------------------------------------------*/
+
+.server-status-section5 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.server-status-section5{
+  display: flex;
+   /* باکس‌ها زیر هم */
+  align-items: flex-start;
+  gap: 15px;
+  margin-right: 580px;
+  margin-top: 153px;
+}
+
+.status-card5 {
+  display: flex;
+  align-items: center;
+  background: #0d1b2a;
+  padding: 15px 20px;
+  border-radius: 12px;
+  width: 250px;             /* عرض مشخص */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+
+.status-card5:hover {
+  transform: translateY(-5px);
+}
+
+.status-light5 {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-left: 1.5rem;
+}
+
+.online5 {
+  background-color: #ff0000;
+  box-shadow: 0 0 10px #ff0000;
+}
+
+.status-info5 h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.status5 {
+  font-size: 0.9rem;
+  color: #ff5757;
+  margin-bottom: 0.3rem;
+}
+
+.players5{
+  font-size: 0.9rem;
+  opacity: 0.8;
 }

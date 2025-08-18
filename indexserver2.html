@@ -95,14 +95,64 @@ footer { padding:15px; text-align:center; font-size:14px; color:#aaa; background
   h1 { font-size:22px; }
   .info { font-size:14px; padding:10px; }
 }
+
+/* CSS */
+#loader {
+  position: fixed;
+  inset: 0; /* بالا، پایین، چپ و راست = 0 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(8px);
+  background-color: rgba(0,0,0,0.3);
+  z-index: 9999;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#loader h2 {
+  margin-top: 20px;
+  color: #00ffd6;
+  font-family: 'Vazir', sans-serif;
+  text-shadow: 0 0 10px rgba(0,255,214,0.6);
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid rgba(0,255,214,0.2);
+  border-top: 6px solid #00ffd6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
 </style>
 </head>
 <body>
+
+<!-- HTML -->
+<div id="loader">
+  <div class="spinner"></div>
+  <h2>در حال بارگذاری...</h2>
+</div>
+
 
   <nav>
     <div class="logo">ServerPanel</div>
     <div class="menu">
       <a href="index1.html">خانه</a>
+        <a href="index2(s).html">سرور صدرا</a>
+        <a href="index3(m).html">سرور مهدی</a>
+        <a href="index4(3nafar).html">سرور سه نفره</a>
+        <a href="informations.html">اطلاعات بیشتر</a>
     </div>
   </nav>
 
@@ -140,6 +190,14 @@ footer { padding:15px; text-align:center; font-size:14px; color:#aaa; background
         setTimeout(()=>{msg.style.display="none"},1500);
       }).catch(()=>{alert("امکان کپی کردن وجود ندارد.")});
     }
+
+      // لودر
+  window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+    setTimeout(() => {
+      loader.classList.add("hidden");
+    }, 400); 
+  });
   </script>
 
 </body>

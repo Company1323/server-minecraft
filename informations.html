@@ -25,6 +25,18 @@ main {
 </head>
 <body>
 
+  <div id="loader">
+  <div class="spinner"></div>
+  <h2>در حال بارگذاری...</h2>
+</div>
+
+<!-- محتوای اصلی -->
+<div class="main-content">
+  <form class="login-form">
+    <!-- فرم لاگین تو اینجا باشه -->
+  </form>
+</div>
+
   <!-- نواربالا -->
   <nav class="navbar">
     <img class="img1" src="m2.png" alt="لوگو سایت" />
@@ -40,6 +52,7 @@ main {
       <a href="index1.html">خانه</a>
       <a href="index2(s).html">سرور صدرا</a>
       <a href="index3(m).html">سرور مهدی</a>
+      <a href="index4(3nafar).html">سرور سه نفره</a>
       <a href="informations.html" class="active">اطلاعیه‌ها</a>
     </div>
   </nav>
@@ -48,18 +61,39 @@ main {
   <h1>📢 اطلاعیه‌های جدید</h1>
   </div>
 
-  <!-- لیست اطلاعیه‌ها -->
-  <section class="server-status">
-    <div class="on-off">
-      <div class="green-light"></div>
-      <div class="status-text">
-        <h3>... اطلاعیه سرورها و</h3>
-        <p class="online">اطلاعیه ها در اینجا گذاشته میشود.</p>
-      </div>
-    </div>
-  </section> <!-- اینو فراموش کرده بودی -->
+  <section class="server-status-section">
+       <div class="status-card">
+          <div class="status-light online"></div>
+          <div class="status-info">
+            <h3>اطلاعیه‌ها</h3>
+            <p class="status">زمان باز کردن سرور ها در اینجا اطلاع داده میشود.</p>
+          </div>
+        </div>
+  </section> 
+    <section class="server-status-section2">
+       <div class="status-card2">
+          <div class="status-light2 online"></div>
+          <div class="status-info2">
+            <h3>اطلاعیه سرورها</h3>
+            <p class="status2">سرور صدرا:
+              روز() و ساعت ()
+            </p>
+            <br>
+            <hr>
+            <br>
+            <p class="status2">سرور مهدی:
+              روز() و ساعت ()
+            </p>
+            <br>
+            <hr>
+            <br>
+            <p class="status2">سرور سه نفره:
+              روز() و ساعت ()
+            </p>
+          </div>
+        </div>
+  </section> 
 
-  <!-- فوتر -->
   <footer>
     © 2025 - تمامی حقوق محفوظ است
   </footer>
@@ -72,6 +106,13 @@ main {
     hamburger.addEventListener('click', () => {
       navLinks.classList.toggle('active');
     });
+
+    window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  setTimeout(() => {
+    loader.classList.add("hidden");
+  }, 420);
+});
   </script>
 </body>
 </html>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="m4.png" type="image/png" />
   <link rel="stylesheet" href="style-in2.css">
-  <title>لاگین | سرور صدرا</title>
+  <title>لاگین | سرور سه نفره</title>
 </head>
 <body>
 
@@ -71,9 +71,9 @@ function togglePassword(){
     const pass = document.getElementById('password').value.trim();
     const errorMsg = document.getElementById('errorMsg');
 
-    if (user === 'sadra' && pass === 'sadra90') {
+    if (user === 'three' && pass === '123') {
       errorMsg.style.display = 'none';
-      window.location.href = 'indexserver.html';
+      window.location.href = 'indexserver3.html';
     } else {
       errorMsg.style.display = 'block';
       errorMsg.textContent = 'نام کاربری یا رمز عبور اشتباه است!';
